@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>Atividade A</title>
+	<link href="css/seu-stylesheet.css" rel="stylesheet"/>
+	<script src="scripts/seu-script.js"></script>
+</head>
+<body>
+    <h1></h1>
+
+	<script>
+        
+        var final = false
+        var array = []
+        while(final!==true){
+            window.confirm("Digite 1 - Para cadastrar um usuário\nDigite 2 - Para descobrir quanto vale um número na sequencia de fibonacci\nDigite 0 - Para Terminar")
+            var comando = parseInt(window.prompt("Digite um número"), 10)
+            if(comando===1){
+                var nome = window.prompt("Digite o nome do usuário")
+                var idade = window.prompt("Digite a idade do usuário")
+                append(nome)
+                append(idade)
+                window.alert("Cadastrado com sucesso")
+            }
+            else if(comando===2){
+                var numero = parseInt(window.prompt("Digite um número"), 10)
+                window.alert("A resposta é: "+fibonacci(numero))
+            }
+            else if(comando===0){
+                final = true
+            }
+            else{
+                window.alert("digite um número entre 1 e 2 ou 0 para sair")
+            }
+            
+        }
+
+        function append (item){
+            var controle_de_fronteira = 0
+            array[0]=item
+            controle_de_fronteira+=1
+        }
+
+        function fibonacci(termo){
+            
+            var penultimo=0, ultimo=1;
+            var numero;
+        
+            if(termo<=2)
+            numero = termo-1;
+            else
+            for(var count=3 ; count<=termo ; count++){
+            numero = ultimo + penultimo;
+            penultimo = ultimo;
+            ultimo = numero;
+            }
+        
+            return ultimo
+        }
+    </script>
+
+</body>
+</html>
